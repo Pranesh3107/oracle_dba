@@ -1,0 +1,16 @@
+
+********************************************************************************************************************************
+Title: History of all scheduler job runs
+created date:25/01/2025
+Description:The provided SQL query retrieves details about the execution history of scheduled jobs in an Oracle database. 
+version:1
+
+********************************************************************************************************************************
+
+
+set pagesize 299
+set lines 299
+col JOB_NAME for a24
+col actual_start_date for a56
+col RUN_DURATION for a34
+select job_name,status,actual_start_date,run_duration from DBA_SCHEDULER_JOB_RUN_DETAILS order by ACTUAL_START_DATE desc;
